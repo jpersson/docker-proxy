@@ -1,0 +1,11 @@
+[tasks.up]
+run = "docker compose up -d"
+
+[tasks.down]
+run = "docker compose down"
+
+[tasks.logs]
+run = "docker compose logs -f"
+
+[tasks.ps]
+run = "docker compose ps"

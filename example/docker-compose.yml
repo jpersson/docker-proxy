@@ -1,0 +1,20 @@
+# Example stack — replace whoami with your actual service
+#
+# Access at: http://whoami.localhost
+#
+# Requirements before starting this stack:
+#   - The docker-proxy stack must be running (the `proxy` network must exist)
+
+services:
+  whoami:
+    image: traefik/whoami
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
+      - "traefik.http.services.whoami.loadbalancer.server.port=80"
+
+networks:
+  proxy:
+    external: true
