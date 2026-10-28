@@ -1,3 +1,5 @@
+name: traefik-proxy
+
 services:
   traefik:
     image: traefik:v3.7
